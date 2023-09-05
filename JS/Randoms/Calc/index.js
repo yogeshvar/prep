@@ -11,8 +11,12 @@ keys.addEventListener('click', e => {
             input_text.textContent = displayedNum + keyContent
         }
 
-        if (action == 'clear' || action == 'del') {
-            input_text.textContent = '';
+        if (action == 'clear') {
+            input_text.textContent = 0;
+        }
+
+        if (action == 'del') {
+            input_text.textContent = input_text.textContent.slice(0, -1)
         }
 
         if (action == 'add' || action == 'sub' || action == 'multiply' || action == 'div') {
