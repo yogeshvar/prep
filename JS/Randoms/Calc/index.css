@@ -1,0 +1,71 @@
+body {
+    font-family: 'Inter';
+    background-color: #3B4664;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.center {
+    width: 400px;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-family: Tahoma;
+}
+
+.input {
+    border-radius: 12px;
+    width: 350px;
+    background: #181F32;
+    height: 75px;
+    margin: 10px;
+    padding: 10px 10px;
+    font-family: "Segoe UI";
+    font-size: 32px;
+    font-weight: 500;
+    text-align-last: end;
+}
+
+
+.title {
+    color: white;
+    font-weight: bold;
+}
+
+.nums {
+    padding: 10px;
+    margin: 10px 5px 5px 10px;
+}
+
+
+.two-span {
+    grid-column: span 2;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 5px 10px 10px;
+}
+
+.secondary-color {
+    background-color: #647299;
+    color: white;
+    font-weight: lighter;
+}
+
+.equal {
+    background-color: #D13F30;
+    color: white;
+}
+
+.numpad {
+    display: grid;
+    color: black;
+    width: 350px;
+    margin: 0px 5px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    background: #252D44;
+    border-radius: 12px;
+}
