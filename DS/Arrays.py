@@ -135,3 +135,34 @@ def binary_search(arr, low, high, key):
 
 print(binary_search(init_array, 0, len(init_array) - 1, 9)) # -1
 print(binary_search(init_array, 0, len(init_array) - 1, 3)) # 2
+
+
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min = arr[i]
+        for j in range(i+1, len(arr)):
+            if arr[j] < min:
+                min = arr[j]
+                arr[j], arr[i] = arr[i], arr[j]
+    return arr
+
+print(selection_sort([64, 25, 12, 22, 11])) # [11, 12, 22, 25, 64]
+
+
+def generate_subarrays(arr):
+    for i in range(len(arr)):
+        for j in range(i, len(arr)):
+            print(arr[i:j+1])
+
+def generate_subarrays_v2(arr, start, end):
+    if end == len(arr):
+        return
+    if start > end:
+        return generate_subarrays_v2(arr, 0, end+1)
+    else:
+        print(arr[start:end+1])
+        return generate_subarrays_v2(arr, start+1, end)
+
+generate_subarrays([1,2,3,4])
+generate_subarrays_v2([1,2,3,4], 0, 0)
+
