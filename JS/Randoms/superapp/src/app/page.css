@@ -1,0 +1,131 @@
+:root {
+    --primary-color: #72DB73;
+    --secondary-color: #7C7C7C;
+}
+
+.App {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 110vw;
+}
+
+.Welcome-Banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: #282c34;
+}
+
+
+.App-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.welcome-text {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-family: var(--font-dm-sans);
+    position: absolute;
+    left: 35px;
+    top: 500px;
+    font-weight: 700;
+}
+
+.App-Body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: black;
+}
+
+.App-title {
+    font-size: 2em;
+    color: var(--primary-color);
+    font-weight: 400;
+    font-family: var(--font-single-day)
+}
+
+.App-subtitle {
+    font-size: 1em;
+    color: white;
+    font-family: var(--font-dm-sans);
+}
+
+.inputText {
+    /* a text field as boxc with #292929 */
+    background-color: #292929;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 75%;
+    height: 3.5em;
+    color: var(--secondary-color);
+    font-family: var(--font-dm-sans);
+}
+
+.btn {
+    /* a button with #72DB73 */
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 28px;
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 70%;
+    height: 2em;
+    font-size: 16px;
+    color: white;
+    font-family: var(--font-roboto);
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.App-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    width: 65%;
+    font-family: var(--font-dm-sans);
+}
+
+.share-check {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-color);
+    font-size: 12px;
+}
+
+.share-check p {
+    margin: 5px;
+    font-family: var(--font-dm-sans);
+}
+
+.tos-text {
+    color: var(--secondary-color);
+    font-size: 12px;
+    font-family: var(--font-roboto);
+    width: 75%;
+    text-align: left;
+    padding-left: 20px;
+    margin: 10px;
+}
+
+.tos-text a {
+    color: var(--primary-color);
+}
