@@ -3,6 +3,8 @@ const ctx = canvas.getContext('2d')
 const gravity = 0.7
 
 let lastKey
+let gameStarted = false
+
 
 canvas.width = 1024
 canvas.height = 576
@@ -22,7 +24,7 @@ const shop = new Sprite({
 })
 
 const player = new Fighter({
-  position: { x: 0, y: 0 },
+  position: { x: 100, y: 0 },
   velocity: { x: 0, y: 0 },
   color: 'red',
   offset: { x: 215, y: 157 },
@@ -67,7 +69,7 @@ const player = new Fighter({
 })
 
 const enemy = new Fighter({
-  position: { x: 400, y: 100 },
+  position: { x: 800, y: 100 },
   velocity: { x: 0, y: 0 },
   color: 'blue',
   offset: { x: 215, y: 165 },
@@ -229,10 +231,10 @@ player.draw()
 enemy.draw()
 
 animate()
-decreaseTimer()
+
 
 window.addEventListener('keydown', event => {
-  if (!player.dead) {
+  if (!player.dead && gameStarted) {
     switch (event.key) {
       case 'd':
         keys.d.pressed = true
@@ -251,7 +253,7 @@ window.addEventListener('keydown', event => {
         break
     }
   }
-  if (!enemy.dead) {
+  if (!enemy.dead && gameStarted) {
     switch (event.key) {
       case 'ArrowRight':
         keys.ArrowRight.pressed = true
@@ -303,4 +305,27 @@ window.addEventListener('keyup', event => {
         break
     }
   }
+})
+
+const startBtn = document.querySelector('#startBtn')
+startBtn.addEventListener('click', () => {
+  startBtn.style.display = 'none'
+  gameStarted = true
+  decreaseTimer()
+})
+
+const controlsScreen = document.getElementById('controlsScreen')
+const showControlsBtn = document.getElementById('showControls')
+const closeControlsBtn = document.getElementById('closeBtn')
+
+showControlsBtn.addEventListener('click', () => {
+  controlsScreen.style.display = 'block'
+  startBtn.style.display = 'none'
+  showControlsBtn.style.display = 'none'
+})
+
+closeControlsBtn.addEventListener('click', () => {
+  controlsScreen.style.display = 'none'
+  startBtn.style.display = 'block'
+  showControlsBtn.style.display = 'block'
 })
