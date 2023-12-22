@@ -308,15 +308,19 @@ window.addEventListener('keyup', event => {
 })
 
 const startBtn = document.querySelector('#startBtn')
-startBtn.addEventListener('click', () => {
-  startBtn.style.display = 'none'
-  gameStarted = true
-  decreaseTimer()
-})
-
 const controlsScreen = document.getElementById('controlsScreen')
 const showControlsBtn = document.getElementById('showControls')
 const closeControlsBtn = document.getElementById('closeBtn')
+const game = document.querySelector('.game')
+const mobileMessage = document.querySelector('.mobile')
+
+startBtn.addEventListener('click', () => {
+  startBtn.style.display = 'none'
+showControlsBtn.style.display = 'none'
+
+  gameStarted = true
+  decreaseTimer()
+})
 
 showControlsBtn.addEventListener('click', () => {
   controlsScreen.style.display = 'block'
@@ -329,3 +333,26 @@ closeControlsBtn.addEventListener('click', () => {
   startBtn.style.display = 'block'
   showControlsBtn.style.display = 'block'
 })
+
+window.addEventListener('load', () => {
+  checkMobile()
+})
+
+window.addEventListener('resize', () => {
+  checkMobile()
+})
+
+function checkMobile () {
+  if (window.innerWidth < 1024 || window.innerHeight < 576) {
+    console.log('mobile')
+    game.style.display = 'none'
+    startBtn.style.display = 'none'
+    showControlsBtn.style.display = 'none'
+    mobileMessage.style.display = 'block'
+  } else {
+    game.style.display = 'block'
+    startBtn.style.display = 'block'
+    showControlsBtn.style.display = 'block'
+    mobileMessage.style.display = 'none'
+  }
+}

@@ -165,3 +165,13 @@ body {
     height: 1px;
     background-color: #333;
 }
+.mobileMessage {
+    display: none;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
